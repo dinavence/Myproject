@@ -14,7 +14,7 @@
     session_start(); // Start session to store user's login status
 
     include("php/connect.php"); // Include the file to establish database connection
-
+    if(isset($_POST['submit'])){
     if(isset($_POST['id_number']) && isset($_POST['password'])) {
     $idNumber = $_POST['id_number']; // Retrieve user input for id number
     $password = $_POST['password']; // Retrieve user input for password
@@ -28,7 +28,7 @@
         // User found, store user data in session and redirect to dashboard or desired page
         $_SESSION['logged_in'] = true;
         $_SESSION['user_data'] = mysqli_fetch_assoc($result);
-        header("Location: home.php"); // Redirect to dashboard page
+        header("Location: propertiesform.php"); // Redirect to dashboard page
         exit();
     }
      else {
@@ -38,19 +38,34 @@
             </div> <br>";
         echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
     }
+}
+
 } 
 
 
 ?>
 
-        <form>
+        <form action="properties.php" method="post">
             <label>Id number</label>
-            <input type="text"name="Id number" id="idnumber" required>
+            <input type="text" placeholder="eg 123456" name="Id number" id="idnumber" maxlength="10" required>
             <label>Password</label>
-            <input type="password"name="password" id="password" required>
+            <input type="password" placeholder="enter a password" name="password" id="password" maxlength="8"required>
+            <input type="checkbox"id="showPassword" onchange="togglePasswordVisibility()">
             <input type="submit" name="submit" value="SUBMIT" required>
         </form>
     </div>
     <p>Don't have an account?<a href="Admin.php">Sign up</a></p>
-    </body>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
 </html>

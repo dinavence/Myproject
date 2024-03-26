@@ -11,12 +11,25 @@
         <h1>Log In</h1>
         <form>
             <label>Id number</label>
-            <input type="text"placeholder="">
+            <input type="text"placeholder="eg 123456" maxlength="10">
             <label>Password</label>
-            <input type="password"placeholder="">
+            <input type="password"placeholder="enter a password" maxlength="8">
+            <input type="checkbox"id="showPassword" onchange="togglePasswordVisibility()">
             <input type="button"value="SUBMIT">
         </form>
     </div>
     <p>Don't have an account?<a href="Admin.html">Sign up</a></p>
-    </body>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
 </html>

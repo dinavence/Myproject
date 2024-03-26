@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
+    <div class="container">
     <div class="signup-box">
         <h1>Sign Up</h1>
         
@@ -50,23 +51,40 @@
         }
         else{
         ?>
-        <form action="" method="post">
+        <form action="login.php" method="post">
             <label for="firstname">First Name</label>
-            <input type="text" name="First_name" id="first_name" required>
+            <input type="text" placeholder="eg John" name="First_name"  id="first_name" required>
             <label for="lastname">Last Name</label>
-            <input type="text" name="Last_name" id="last_name" required>
+            <input type="text" placeholder="eg Waithera" name="Last_name" id="last_name" required>
             <label for="idnumber">Id Number</label>
-            <input type="text" name="Id_number" id="id_number" required>
+            <input type="text" placeholder="eg 123456" name="Id_number" id="id_number" maxlength="10" required>
             <label for="location">Location</label>
-            <input type="text" name="Location" id="location" required>
+            <input type="text" placeholder="eg Nairobi" name="Location" id="location" required>
             <label for="password">Password</label>
-            <input type="password" name="Password" id="password" required>
+            <input type="password" placeholder="enter a password" name="Password" id="password" maxlength="8" required>
             <label for="confirmpassword">confirm Password</label>
-            <input type="password" name="confirm_password" id="confirm_password" required>
+            <input type="password" placeholder="confirm password" name="confirm_password" id="confirm_password" maxlength="8" required>
+            <input type="checkbox"id="showPassword" onchange="togglePasswordVisibility()">show password
             <input type="submit" name="submit" value="SUBMIT">
+        
         </form>
     </div>
+        </div>
     <?php } ?>
     <p>Already have an account?<a href="login.php">LOG IN</a></p>
+    <p>I am an Admin <a href="Admin.php">SIGN UP</a><p>
+    
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

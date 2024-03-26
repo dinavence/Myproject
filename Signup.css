@@ -8,11 +8,12 @@ body{
     margin: auto;
     background-color: rgb(240, 240, 238);
     border-radius: 3px;
+
     
 }
 .login-box{
     width: 300px;
-    height: 350px;
+    height: 400px;
     margin: auto;
     border-radius: 5px;
     padding-bottom: 5px;
@@ -26,6 +27,8 @@ h1{
 form{
     width: 250px;
     margin-left: 20px;
+    border: #0f0f0f;
+    border-radius: 10px;
 }
 form label{
     display:flex;
@@ -39,7 +42,7 @@ form input{
     border-radius: 6px;
     outline: none;
 }
-input[type="submit"]{
+input[type="SUBMIT"]{
     width: 270px;
     height: 35px;
     margin-top: 20px;
@@ -47,9 +50,34 @@ input[type="submit"]{
     background-color: rgb(7, 133, 51);
     color: #fff;
     font-size: 18px;
-}
+}  
 p{
     text-align: center;
     margin-top: 20px;
 
 }
+.message{
+    text-align: center;
+    padding: 15px 0;
+    border: 1px solid #696969;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.card-payform{
+    width: 300px;
+    height: 300px;
+}
+
+.card{
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    border:2px solid #0f0f0f;
+    background-color: rgb(153, 234, 234);
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+

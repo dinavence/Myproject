@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYHOUSE</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
 </head>
 <body>
     <section class="header"> 
         <nav>
-            <a href="index.html"><img src="images/logo.jpg"> <div class="logotext">MyHouse</div></a>
+            <a href="home.php"><i class="fa-solid fa-house"></i><br>MyHouse</a>
             <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <i class="fa-solid fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href ="home.html">HOME</a></li>
-                    <li><a href ="properties.html">PROPERTIES</a></li>
-                    <li><a href ="contact.html">CONTACT</a></li>
-                    <li><a href ="about.html">ABOUT</a></li>
+                    <li><a href ="home.php">HOME</a></li>
+                    <li><a href ="properties.php">PROPERTIES</a></li>
+                    <li><a href ="contact.php">CONTACT</a></li>
+                    <li><a href ="about.php">ABOUT</a></li>
                 </ul>
 
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <i class="fa-solid fa-bars"onclick="showMenu()"></i>
         </nav>
 <div class="text-box">
     <h1>Our Home</h1>
     <p>Get your dream home now through our affordable housing project provided by the government</p>
-    <a href="signup.html" class="hero-btn">Sign Up To Know More</a>
+    <a href="signup.php" class="hero-btn">Sign Up To Know More</a>
 
 </div>
     </section>
@@ -97,9 +99,9 @@
         <h4>About Us</h4>
         <p>This Is A Government Platform Where Its Citizen Get to Access Their Dream Homes</p>
         <div class="icons">
-            <i class="fa fa-facebook"></i> 
-            <i class="fa fa-instagram"></i> 
-            <i class="fa fa-X" ></i>
+            <i class="fa-brands fa-facebook"></i> 
+            <i class="fa-brands fa-instagram"></i> 
+            <i class="fa-brands fa-twitter" ></i>
 
         </div>
     </section>
@@ -114,7 +116,7 @@
         function showMenu(){
             navLinks.style.right = "0"
         }
-        function showMenu(){
+        function hideMenu(){
             navLinks.style.right = "-200px"
         }
     </script>

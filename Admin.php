@@ -51,21 +51,34 @@
 
     ?>
     
-        <form action="" method="post">
+        <form action="adminlogin.php" method="post">
             <label for="firstname">First Name</label>
-            <input type="text" name="First_name" id="First_name" required>
+            <input type="text" placeholder="eg John" name="First_name" id="First_name" required>
             <label for="last name">Last Name</label>
-            <input type="text" name="Last_name" id="Last_name" required>
+            <input type="text" placeholder="eg Waithera" name="Last_name" id="Last_name" required>
             <label for="id number">Id number</label>
-            <input type="text" name="Id_number" id="Id_number" required>
+            <input type="text" placeholder="eg 123456" name="Id_number" id="Id_number" maxlength="10" required>
             <label for="password">Password</label>
-            <input type="password" name="Password" id="Password" required>
+            <input type="password" placeholder="enter a password" name="Password" id="Password" maxlength="8"required>
             <label for="confirm password">Confirm Password</label>
-            <input type="password" name="Confirm_password" id="Confirm_password" required>
+            <input type="password" placeholder="confirm password" name="Confirm_password" id="Confirm_password" maxlength="8">
+            <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
             <input type="submit" name="submit" value="SUBMIT" required>
         </form>
     </div> 
 <?php } ?>
         <p> Already have an account? <a href="adminlogin.php"> LOG IN </a></p>
+        <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

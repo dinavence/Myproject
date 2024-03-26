@@ -15,10 +15,23 @@
             <label>Location</label>
             <input type="text"placeholder="">
             <label>Password</label>
-            <input type="password"placeholder="">
+            <input type="password"placeholder="enter a pasword" maxlength="8"required>
+            <input type="checkbox"id="showPassword" onchange="togglePasswordVisibility()">
             <input type="button"value="SUBMIT">
         </form>
     </div>
     <p>Don't have an account?<a href="signup.html">Sign up</a></p>
-    </body>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
 </html>
