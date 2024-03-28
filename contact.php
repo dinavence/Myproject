@@ -26,7 +26,7 @@
         <div class="text-box">
             <h1>Our Home</h1>
             <p>Get your dream home now through our affordable housing project provided by the government</p>
-            <a href="signup.php" class="hero-btn">Sign Up To Know More</a>
+        
         
         </div>
         </section>
