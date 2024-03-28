@@ -94,11 +94,11 @@
     <h1>Properties Table</h1>
 
     <select id="locationSelect">
-    <option value="all"onclick="showMenu()">All Locations</option>
-    <option value="Nairobi"onclick="showMenu()">Nairobi</option>
-    <option value="Mombasa"onclick="showMenu()">Mombasa</option>
-    <option value="Kisumu" onclick="showMenu()">Kisumu</option>
-    <option value="Nakuru"onclick="showMenu()">Nakuru</option>
+    <option value="all">All Locations</option>
+    <option value="Nairobi">Nairobi</option>
+    <option value="Mombasa">Mombasa</option>
+    <option value="Kisumu" >Kisumu</option>
+    <option value="Nakuru">Nakuru</option>
 </select>
   
     <table class=properties-table>
@@ -154,7 +154,7 @@
         </div>
     </section>
     <script>
-            document.getElementById('locationSelect').addEventListener('change', function showMenu() {
+            document.getElementById('locationSelect').addEventListener('change', function() {
         var location = this.value;
         var rows = document.getElementById('properties-table').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
         
