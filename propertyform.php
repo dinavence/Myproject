@@ -46,7 +46,7 @@
         else{
 
          ?>
-        <form method="POST" action="properties.php">
+        <form method="POST" action="propertyform.php">
             <label>location</label>
             <input type="text" placeholder="eg Nairobi" name="location" required>
             <label>house number</label>

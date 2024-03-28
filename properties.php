@@ -92,6 +92,14 @@
 <section>
 <div>
     <h1>Properties Table</h1>
+
+    <select id="locationSelect">
+    <option value="all"onclick="showMenu()">All Locations</option>
+    <option value="Nairobi"onclick="showMenu()">Nairobi</option>
+    <option value="Mombasa"onclick="showMenu()">Mombasa</option>
+    <option value="Kisumu" onclick="showMenu()">Kisumu</option>
+    <option value="Nakuru"onclick="showMenu()">Nakuru</option>
+</select>
   
     <table class=properties-table>
         <thead>
@@ -105,7 +113,8 @@
             
         </thead>
         <tbody>
-    <?php
+
+  <?php
          include("php/connect.php"); 
             // Query to retrieve data
             $query = "SELECT * FROM properties";
@@ -124,11 +133,15 @@
             } else {
                 echo "0 results";
             }
-    ?>  
+    ?>
+
+    
             </tbody>
     </table>
-</div> 
-<p>Proceed to pay<a href="paymentmodule.php"> PAY NOW</a></p>        
+</div>
+<div> 
+<p>Proceed to pay</p> <a href="paymentmodule.php"> <button>PAY NOW</button> 
+</div>      
  </section>
     <section class="footer">
         <h4>About Us</h4>
@@ -141,9 +154,21 @@
         </div>
     </section>
     <script>
-        function selectLocation(location) {
-            window.location.href = "properties.php?location=" + location;
+            document.getElementById('locationSelect').addEventListener('change', function showMenu() {
+        var location = this.value;
+        var rows = document.getElementById('properties-table').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var locationCell = row.getElementsByTagName('td')[0];
+            
+            if (location === 'all' || locationCell.textContent === location) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
         }
+    });
     </script>
     
 </body>

@@ -51,7 +51,7 @@
         }
         else{
         ?>
-        <form action="login.php" method="post">
+        <form action="signup.php" method="post">
             <label for="firstname">First Name</label>
             <input type="text" placeholder="eg John" name="First_name"  id="first_name" required>
             <label for="lastname">Last Name</label>
